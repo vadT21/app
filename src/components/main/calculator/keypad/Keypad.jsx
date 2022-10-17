@@ -93,7 +93,12 @@ const Keypad = () => {
     dispatch(clearAll());
   };
   const deleteLastNumberHandler = () => {
-    if (display && Number.isFinite(+display)){
+    if (display 
+      && 
+      Number.isFinite(+display)
+      &&
+      !display.toString().includes('e')
+    ){
       dispatch(deleteLastNumber());
     } 
   };
